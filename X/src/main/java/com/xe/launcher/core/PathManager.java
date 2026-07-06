@@ -3,7 +3,8 @@ package com.xe.launcher.core;
 import java.io.File;
 
 public class PathManager {
-    // Defining base directories for the Xe Launcher
+    
+    // The root directory where the application is running
     public static final String ROOT_DIR = System.getProperty("user.dir");
     
     public static File getMinecraftDir() {
@@ -19,10 +20,10 @@ public class PathManager {
     }
 
     public static File getLibsDir() {
-        return new File(ROOT_DIR, "libs");
+        return new File(ROOT_DIR, "X/libs");
     }
 
-    // Method to ensure directories exist upon startup
+    // Ensures all required directories exist
     public static void initializeDirectories() {
         getMinecraftDir().mkdirs();
         getJavaDir().mkdirs();
@@ -30,4 +31,3 @@ public class PathManager {
         getLibsDir().mkdirs();
     }
 }
-
