@@ -1,0 +1,31 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.xe.launcher'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.xe.launcher"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    // Core dependencies for Xe Launcher
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.10.0'
+    
+    // Kotlin standard library
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.9.0'
+}
+
