@@ -21,18 +21,22 @@ android {
 }
 
 repositories {
-    flatDir {
-        dirs 'libs'
-    }
+    google()
+    mavenCentral()
+    maven { url 'https://jitpack.io' } // ضروري جداً لمكتبات اللانشرات
 }
 
 dependencies {
+    // Android Core
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.10.0'
     implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.9.0'
 
-    // Manual library imports from the /X/libs folder
-    implementation files('libs/gson-2.10.1.jar')
-    implementation files('libs/okhttp-4.11.0.jar')
-    implementation files('libs/okio-3.6.0.jar') // Required by OkHttp
+    // Networking & Data
+    implementation 'com.google.code.gson:gson:2.11.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+    implementation 'commons-io:commons-io:2.16.1'
+
+    // Logging
+    implementation 'org.slf4j:slf4j-api:2.0.13'
 }
