@@ -20,18 +20,19 @@ android {
     }
 }
 
-dependencies {
-    // Core dependencies for Xe Launcher
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.10.0'
-    
-    // For Networking
-    implementation 'com.squareup.okhttp3:okhttp:4.11.0'
-    // For JSON parsing
-    implementation 'com.google.code.gson:gson:2.10.1'
-    
-    // Kotlin standard library
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.9.0'
-  X include ':X'
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
 }
 
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.10.0'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.9.0'
+
+    // Manual library imports from the /X/libs folder
+    implementation files('libs/gson-2.10.1.jar')
+    implementation files('libs/okhttp-4.11.0.jar')
+    implementation files('libs/okio-3.6.0.jar') // Required by OkHttp
+}
